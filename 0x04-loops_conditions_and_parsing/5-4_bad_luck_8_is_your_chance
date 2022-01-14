@@ -4,14 +4,17 @@
 #+ "good luck" for the 8th loop iteration
 #+ "Holberton School" for the other iterations
 
-COUNTER=1
-while [ "$COUNTER" -le 10 ]; do
-    if [ $COUNTER -eq 4 ]; then
+$i=1
+while [ $i -le 10 ] 
+do
+    if [ $i == 4 ]
+    then
 	echo "bad luck"
-    elif [ $COUNTER -eq 8 ]; then
+    elif [ $i == 8 ]
+     then
 	echo "good luck"
     else
 	echo "Holberton School"
     fi
-    let COUNTER=COUNTER+1
+    ((i++))
 done
