@@ -1,13 +1,15 @@
 #!/usr/bin/env bash
-# displays Holberton School 10 times but for the 9th iteration, displays Holberton School and then Hi on a new line
+# Prints "Best School" 10 times using while loop, and prints Hi on the 9th
+# iteration
 
 i=0
-while [ $i -le 10 ]
- do
-	echo "Best School"
-	if [ $i == 8 ]
-	then
-	    echo "Hi"
-	fi
-	let ((i++))
+
+while [ $i -le 9 ]
+do
+  echo "Best School"
+  if [ $i == 8 ]
+  then
+      echo "Hi"
+  fi
+  ((i++))
 done
