@@ -1,17 +1,21 @@
 #!/usr/bin/env bash
-# gives you information about the holbertonschool file
+# Gives information about file school
 
-FILE="holbertonschool"
-if [ -e "$FILE" ]; then
-    echo "$FILE file exists"
-    if [ -s "$FILE" ]; then
-	echo "holbertonschool file is not empty"
-    else
-	echo "holbertonschool file is empty"
-    fi
-    if [ -f "$FILE" ]; then
-	echo "holbertonschool is a regular file"
-    fi
-else
-    echo "holbertonschool file does not exist"
+f="school"
+
+if [ -e "$f" ]; then
+  echo "school file exists"
+
+  if [ -s "$f" ]; then
+      echo "school file is not empty"
+  else
+    echo "school file is empty"
+  fi
+
+  if [ -f "$f" ]; then
+      echo "school is a regular file"
+  fi
+
+  else
+    echo "school file does not exist"
 fi

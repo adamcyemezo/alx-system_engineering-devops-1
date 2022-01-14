@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
-#  displays the content of the file /etc/passwd
-#+ only displays the:
-#+ username
-#+ group id
-#+ Shell full path for the user
+# Displays username, user id, Home directory path for the user int /etc/passwd
 
-while IFS= read -r LINE; do
-    echo "$LINE" | cut -d':' -f1,4,7
-done < /etc/passwd
+i=0
+
+while [ $i != 1 ]; do
+    cut -d: -f1,3,7 /etc/passwd
+    i=1
+done
