@@ -4,7 +4,8 @@ import requests
 
 
 def number_of_subscribers(subreddit):
-    """  a function that queries the Reddit API and returns the number of subscribers"""
+    """  a function that queries the Reddit API and returns
+    the number of subscribers"""
     if subreddit is None or type(subreddit) is not str:
         return 0
     r = requests.get('http://www.reddit.com/r/{}/about.json'.format(subreddit),
