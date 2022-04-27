@@ -1,11 +1,13 @@
-#!/usr/bin/pyhton3
-""" contain number of sub scribscribers"""
+#!/usr/bin/python3
+"""
+Contains the number_of_subscribers function
+"""
+
 import requests
 
 
 def number_of_subscribers(subreddit):
-    """  a function that queries the Reddit API and returns
-    the number of subscribers"""
+    """returns the number of subscribers for a given subreddit"""
     if subreddit is None or type(subreddit) is not str:
         return 0
     r = requests.get('http://www.reddit.com/r/{}/about.json'.format(subreddit),
