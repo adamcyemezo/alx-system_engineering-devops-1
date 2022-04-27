@@ -11,7 +11,7 @@ def top_ten(subreddit):
         "User-Agent": "0x16-api_advanced:project:\
 v1.0.0 (by /u/firdaus_cartoon_jr)"
     }
-    
+
     params = {
         "limit": 10
     }
