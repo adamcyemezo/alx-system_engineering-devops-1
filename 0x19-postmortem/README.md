@@ -1,4 +1,5 @@
 # Devschool Failure Report
+<image src='./image.png' width="100%">
 
 Last week it was reported that the devschool  platform was  returning error 5000 on all routes. It affected 80% of the platform user . The root cause was failure of our master server web-01
 
