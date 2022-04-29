@@ -1,8 +1,16 @@
-# post mortem
-Any software system will eventually fail, and that failure can come stem from a wide range of possible factors: bugs, traffic spikes, security issues, hardware failures, natural disasters, human error… Failing is normal and failing is actually a great opportunity to learn and improve. Any great Software Engineer must learn from his/her mistakes to make sure that they won’t happen again. Failing is fine, but failing twice because of the same issue is not.
+# Devschool Failure Report
 
-A postmortem is a tool widely used in the tech industry. After any outage, the team(s) in charge of the system will write a summary that has 2 main goals:
+Last week it was reported that the devschool  platform was  returning error 5000 on all routes. It affected 80% of the platform user . The root cause was failure of our master server web-01
 
-    To provide the rest of the company’s employees easy access to information detailing the cause of the outage. Often outages can have a huge impact on a company, so managers and executives have to understand what happened and how it will impact their work.
-    And to ensure that the root cause(s) of the outage has been discovered and that measures are taken to make sure it will be fixed.
+## Timeline
+The error was realized on Friday 29th  April 2022 13:28 (East African Time) when our site reliability engineer Mr. sheezy  received a complain from one of the users and he  found out that the  master server was lagging in speed. He immediately  reported the issue to our engineers  and they decided to disconnect  the web-01 server for further analysis  and channeled all the request to a client server web-02. And they finished solving the problem on Friday 29th April 2022 22:49 (East African Time)
 
+## Root cause and resolution
+Our devschool platform is served by two Ubuntu cloud server. The web-01 server was connected to serve all requests and it stopped functioning due to memory outage as a result of many requests  because during the previous test the client server web-02 was disconnected for temporary testing and was not connected to the load balancer afterwards .
+
+The issue was  solved when the master sever was disconnected temporary foe memory clean up  and was connected back to the load balancer and round robin algorithm was  configured so that the mater and the client server receive equal amount of requests 
+
+## Measures against such problem in future
+    • Always choose the best load balancing algorithm for your programs
+    • always keep an eye on your program to ensure they are running  properly
+    • have extra back-up  server to prevent your program from completely going offline during  an issue 
